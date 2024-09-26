@@ -53,3 +53,33 @@ const funcType = function(){
     console.log("Hello from function")
 }
 console.log(typeof funcType)
+
+// https://tc39.es/ecma262/multipage/ecmascript-data-types-and-values.html#sec-ecmascript-data-types-and-values
+
+
+
+// ***************** STACK(Primitives) & HEAP( Non- Primitives)****************
+
+
+let emailOne = "duaaazhar04@gmail.com"
+let emailTwo = emailOne
+emailTwo = "duaa"
+
+console.log(emailOne) //duaaazhar04@gmail.com
+console.log(emailTwo) //duaa
+// so in primitives, data is assigned by copy its reference is not passed
+
+
+let referenceOne = {
+    name: "Duaa",
+    email: "duaaazhar04@gmail.com"
+}
+
+let referenceTwo = referenceOne
+referenceTwo.email= "duaa.azhar@gmail.com"
+console.log(referenceOne)
+console.log(referenceTwo)
+// so in non-primitives data is passed by reference, so if we change in reference then first variable will also get change
+
+
+
