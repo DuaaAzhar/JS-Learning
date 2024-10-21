@@ -5,7 +5,11 @@ console.log(typeof arr1)
 console.log(typeof arr2)
 
 
-// ARRAY METHODS
+// ***********************************************************************************************************
+                                            // ARRAY METHODS
+// ***********************************************************************************************************
+
+
 let pushReturn= arr1.push(4)
 console.log(arr1)
 console.log(pushReturn)
@@ -105,7 +109,53 @@ console.log(spliced)
 // The slice() method slices out a piece of an array into a new array:
 
 const sliceFruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
-console.log(fruits.slice(1))
+console.log(fruits.slice(2))
 console.log(sliceFruits)
 
 
+
+// ***********************************************************************************************************
+                                            // FINDING AND SEARCHING
+// ***********************************************************************************************************
+
+const myArray = ["papaya", "banana", "orange", "kiwi", "apricot", "orange"]
+
+console.log(myArray.indexOf("orange", 3)); //2nd param to indicate from where to start search
+console.log(myArray.lastIndexOf("orange"));
+console.log(myArray.includes("orange"));
+
+// these methods will take function as a param
+const findArray = [1,4,5,7,0,1,5,8,9];
+console.log(findArray.find(myFunction));
+function myFunction(value, index, array) {
+    return value > 2;
+}
+
+console.log(findArray.findIndex(myFunction));
+console.log(findArray.findLastIndex(myFunction));
+console.log(findArray.findLast(myFunction));
+
+
+
+
+// ***********************************************************************************************************
+                                            // FINDING AND SEARCHING
+// ***********************************************************************************************************
+
+// sort => sorts string arrays only by alphabetical order
+// will change original array
+const sortArray = ["Banana", "Orange", "Apple", "Mango"];
+console.log(sortArray.sort())
+
+
+console.log(findArray.sort())
+// reverse
+// will change original array   --> alternative toSorted()
+console.log(sortArray.reverse())
+
+console.log(findArray.reverse())   //--> alternative toReversed()
+
+
+
+console.log(Math.max.apply(null, findArray))
+console.log(Math.min.apply(null, findArray))
