@@ -50,4 +50,30 @@ literal.age = 25;
 console.log(literal) 
 
 
+// concatenating an object 
+const obj1= {1:'a', 2: 'b'}
+const obj2= {3:'a', 4: 'b'}
+const obj3= {5:'a', 6: 'b'}
+const obj4= {obj1, obj2} //wrong way, as it will make nested objects
+console.log(obj4)
 
+// will copy the objects in the first passed object 
+let obj5= Object.assign({},obj1, obj2, obj3)
+console.log(obj5)
+console.log(obj1)
+
+// but spread operator is most recommended way
+obj5 = {...obj1, ...obj2, ...obj3}
+console.log(obj5)
+
+
+
+// KEYS VALUES & ENTRIES
+console.log(Object.keys(literal))
+console.log(Object.values(literal))
+console.log(Object.entries(literal))
+
+// to check if a key exists or not
+console.log(literal.hasOwnProperty('name'))
+
+ 
