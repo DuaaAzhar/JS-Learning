@@ -49,6 +49,8 @@ console.log(arr1)
 console.log(concatReturn)
 
 
+
+
 // CopyWithIn()
 //  will copy the array elements to some other position in array
 //  Will overwrite the existing values
@@ -114,6 +116,26 @@ console.log(sliceFruits)
 
 
 
+// Alternative and preferable method instead of concat is, SPREAD (...) operator i.e.
+
+const allArrays= [...fruits, ...flatArray, ...joinReturn]
+console.log("All Arrays= ",allArrays)
+
+
+console.log(Array.isArray(allArrays));
+// convert string into array
+console.log(Array.from("String"));
+console.log(Array.from({name: "Duaa"})); //will not work as we have to specify keys or values of object. or for this use "of"
+
+// of
+
+
+console.log(Array.of("OF operation= ","String"));
+console.log(Array.of({name: "Duaa"}, 2, "hello")); 
+
+
+
+
 // ***********************************************************************************************************
                                             // FINDING AND SEARCHING
 // ***********************************************************************************************************
@@ -139,7 +161,7 @@ console.log(findArray.findLast(myFunction));
 
 
 // ***********************************************************************************************************
-                                            // FINDING AND SEARCHING
+                                            // SORTING
 // ***********************************************************************************************************
 
 // sort => sorts string arrays only by alphabetical order
@@ -159,3 +181,75 @@ console.log(findArray.reverse())   //--> alternative toReversed()
 
 console.log(Math.max.apply(null, findArray))
 console.log(Math.min.apply(null, findArray))
+
+
+
+
+
+// ***********************************************************************************************************
+                                     // ARRAY ITERATION
+// ***********************************************************************************************************
+
+console.log("ARRAY ITERATIONS");
+// forEach
+
+// will run function for each array value
+const forEachArray = [1,2,3,4,5,6]
+forEachArray.forEach(iterateFunction)
+
+
+function iterateFunction(value, index, array) {
+    console.log(value*2);
+}
+
+// map
+// maps the function to all array elements and returns a new array 
+const ret=forEachArray.map(x => [x, x * 10])
+console.log(ret)
+console.log(forEachArray)
+
+
+// flatMap
+// maps the function to all array elements and returns a new array after flattening it
+
+console.log(forEachArray.flatMap(x => [x, x * 10]))
+console.log(forEachArray)
+
+
+
+// filter
+// returns new array
+console.log(forEachArray.filter(x => x>5))
+
+// reduce
+
+console.log(forEachArray.reduce(reduceFunction))
+// function for reduce can take 4 params. Returned value of func will be passed as value param to next iteration
+// reduce works from left to right
+function reduceFunction(total, value, index, array) {
+    return total+value
+}
+
+
+
+// reduceRight
+// same as reduce, works right to left
+console.log(forEachArray.reduceRight(reduceFunction))
+
+// every
+// returns bool if all elements of array satisfies the condition in function
+console.log(forEachArray.every(x => x>0))
+
+// some
+// returns bool if any element of array satisfies the condition in function
+console.log(forEachArray.some(x => x>5))
+
+// keys
+const Keys= forEachArray.keys();
+for (x of Keys) {console.log(x)}
+
+// entries
+const Entries= forEachArray.entries();
+for (x of Entries) {console.log(x)}
+
+
