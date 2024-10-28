@@ -77,3 +77,29 @@ console.log(Object.entries(literal))
 console.log(literal.hasOwnProperty('name'))
 
  
+
+
+// DESTRUCTURING OF OBJECTS 
+
+const course ={
+    coursename: "javascript",
+    price: 1000,
+    courseInstructor: "duaa"
+}
+
+course.courseInstructor // not recommended to get each object
+
+const {courseInstructor} = course;
+
+// if want to use short word
+
+const {courseInstructor: instructor} = course
+console.log(courseInstructor)
+console.log(instructor)
+
+// JSON FORMART
+// {
+//     "coursename": "javascript",
+//     "price": "1000",
+//     "courseInstructor": "duaa"
+// }
